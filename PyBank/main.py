@@ -27,11 +27,24 @@ for index,val in enumerate(net):
         minind = index
 
 
-
+# :,.2f   :,f try these for formatting
 print("Financial Analysis")
 print("------------------------------")
-print (f"Total Months: {len(month)}")
-print (f"Total: {sum(net)}")
-print (f"Average Change: {sum(net)/len(net)}")
-print(f"Greatest Increase in profits: {month[maxind]} ({maxval})")
-print(f"Greatest Decrease in profits: {month[minind]} ({minval})")
+print(f"Total Months: {len(month)}")
+print(f"Total: ${sum(net)}")
+print(f"Average Change: ${sum(net)/len(net):.2f}")
+print(f"Greatest Increase in profits: {month[maxind]} (${maxval})")
+print(f"Greatest Decrease in profits: {month[minind]} (${minval})")
+
+
+# file_out = open("pybank.txt","w") 
+
+# file_out.write("Financial Analysis\n")
+# file_out.write("------------------------------\n")
+# file_out.write(f"Total Months: {len(month)}\n")
+# file_out.write(f"Total: ${sum(net)}\n")
+# file_out.write(f"Average Change: ${sum(net)/len(net):.2f}\n")
+# file_out.write(f"Greatest Increase in profits: {month[maxind]} (${maxval})\n")
+# file_out.write(f"Greatest Decrease in profits: {month[minind]} (${minval})\n")
+
+# file_out.close()
