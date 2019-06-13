@@ -6,10 +6,11 @@ candidate = []  # store the candidate (vote) values from the input file
 unique = []     # store a list of unique values in the candidate list
 result = []     # store a list of candidate (vote) counts for each unique 
 
-# create file object for input file
+# set the file path for the input file
 election_csv = os.path.join('election_data.csv')
 
-# open input file within a with statement
+# open, read, close the input file using with
+# create the file object to pass to the reader
 with open(election_csv,newline='',encoding='utf-8-sig') as csvfile:
 
     #create the reader object    
@@ -36,9 +37,9 @@ for vote in candidate:
 # (could also create a bunch variables to store things)
 
 # define the ouput path and filename
-output = 'pybank.txt'
+output = 'pypoll.txt'
 
-#open a text file within a with statement for output
+# open, write to, and close the text file within a with statement
 with open(output,'w') as file_out:
 
     # print the header and total votes
@@ -70,10 +71,8 @@ with open(output,'w') as file_out:
         file_out.write(f'{talley}: {voteCount/len(candidate)*100:.3f}% ({voteCount:,.0f})\n')
 
 
-    # separator in terminal
+    # print/write a separator line for readability
     print('-'*30)
-
-    # separator in output file
     file_out.write('-'*30 + '\n')
 
     # use the ordered list of unique candidates and the ordered list of results to determine the winner
